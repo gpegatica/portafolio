@@ -45,19 +45,20 @@ body {
 
 .logo-name {
     font-family: 'Elephant', 'Georgia', serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
-    letter-spacing: 0.18em; /* Mayor separación entre letras */
+    letter-spacing: 0.25em; /* Mayor separación entre letras */
     text-transform: uppercase;
 }
 
 .logo-sub {
     font-family: 'Georgia', serif;
-    font-size: 0.85rem; /* Mismo tamaño y estilo que los subtítulos */
-    font-style: italic;
+    font-size: 0.8rem;
+    font-style: italic; /* En itálicas como solicitaste */
     color: #444;
     letter-spacing: 0.03em;
     margin-top: 0.1rem;
+    line-height: 1.1;
 }
 
 .nav-links {
@@ -80,16 +81,16 @@ body {
 }
 
 /* ==========================================
-   CABECERA / HOME (Altura reducida)
+   CABECERA / HOME (Compacta)
    ========================================== */
 .header {
-    min-height: 55vh; /* Menos larga para mostrar imágenes de inicio */
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 7rem 2rem 2.5rem 2rem;
+    padding: 7rem 2rem 2rem 2rem;
     border-bottom: 1px solid #e0e0dc;
 }
 
@@ -98,7 +99,7 @@ body {
     font-size: clamp(2.5rem, 6vw, 5.5rem);
     font-weight: normal;
     text-transform: uppercase;
-    letter-spacing: 0.22em; 
+    letter-spacing: 0.22em;
     margin-bottom: 1rem;
     line-height: 1.1;
     color: #111;
@@ -120,35 +121,35 @@ body {
 }
 
 /* ==========================================
-   GALERÍA COMPACTA (Estilo Masonry dinámico sin huecos)
+   GALERÍA COMPACTA SIN ESPACIOS VACÍOS
    ========================================== */
 .gallery {
-    column-count: 3; /* Distribución en columnas para minimizar espacios vacíos */
-    column-gap: 1.5rem;
-    padding: 2.5rem 2.5rem;
+    column-count: 3;
+    column-gap: 1.2rem; /* Espacio horizontal reducido al mínimo */
+    padding: 2rem 2.5rem;
     background-color: #fff;
 }
 
 .project-card {
-    break-inside: avoid; /* Evita que las tarjetas se corten entre columnas */
-    margin-bottom: 1.5rem; /* Espacio mínimo vertical controlado */
+    break-inside: avoid;
+    margin-bottom: 1.2rem; /* Espacio vertical reducido al mínimo para evitar vacíos */
     display: inline-block;
     width: 100%;
     background: #fff;
     transition: transform 0.3s ease;
 }
 
-/* Diferentes alturas dinámicas para los bloques de imagen */
+/* Alturas dinámicas compactas */
 .size-tall .image-container {
-    height: 420px;
+    height: 380px;
 }
 
 .size-medium .image-container {
-    height: 310px;
+    height: 280px;
 }
 
 .size-short .image-container {
-    height: 210px;
+    height: 200px;
 }
 
 .image-container {
@@ -171,19 +172,19 @@ body {
 }
 
 .project-info {
-    padding: 0.8rem 0 0.4rem 0;
+    padding: 0.6rem 0 0.2rem 0;
 }
 
 .project-info h2 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: normal;
     letter-spacing: 0.02em;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.1rem;
     color: #1a1a1a;
 }
 
 .project-info p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #666;
     font-style: italic;
 }
@@ -261,7 +262,7 @@ body {
    ========================================== */
 @media (max-width: 1024px) {
     .gallery {
-        column-count: 2; /* 2 columnas en tablets */
+        column-count: 2;
     }
 }
 
@@ -275,7 +276,7 @@ body {
     }
 
     .gallery {
-        column-count: 1; /* 1 columna en móviles para una lectura lineal limpia */
+        column-count: 1;
         padding: 1.5rem;
         column-gap: 0;
     }
@@ -283,7 +284,7 @@ body {
     .size-tall .image-container,
     .size-medium .image-container,
     .size-short .image-container {
-        height: 280px; 
+        height: 260px; 
     }
 
     .header, .about-section, .footer {
