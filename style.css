@@ -47,18 +47,18 @@ body {
     font-family: 'Elephant', 'Georgia', serif;
     font-size: 0.75rem;
     font-weight: bold;
-    letter-spacing: 0.25em; /* Mayor separación entre letras */
+    letter-spacing: 0.28em; /* Mayor separación entre letras solicitada */
     text-transform: uppercase;
 }
 
 .logo-sub {
     font-family: 'Georgia', serif;
     font-size: 0.8rem;
-    font-style: italic; /* En itálicas como solicitaste */
+    font-style: italic; /* En itálicas */
     color: #444;
     letter-spacing: 0.03em;
+    white-space: nowrap; /* Forzar que "diseño editorial" quede en una sola línea */
     margin-top: 0.1rem;
-    line-height: 1.1;
 }
 
 .nav-links {
@@ -121,22 +121,32 @@ body {
 }
 
 /* ==========================================
-   GALERÍA COMPACTA SIN ESPACIOS VACÍOS
+   GALERÍA COMPACTA (10 proyectos)
    ========================================== */
 .gallery {
     column-count: 3;
-    column-gap: 1.2rem; /* Espacio horizontal reducido al mínimo */
+    column-gap: 1.2rem;
     padding: 2rem 2.5rem;
     background-color: #fff;
 }
 
 .project-card {
     break-inside: avoid;
-    margin-bottom: 1.2rem; /* Espacio vertical reducido al mínimo para evitar vacíos */
+    margin-bottom: 1.2rem;
     display: inline-block;
     width: 100%;
     background: #fff;
-    transition: transform 0.3s ease;
+}
+
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-link:hover {
+    opacity: 0.9;
 }
 
 /* Alturas dinámicas compactas */
@@ -187,6 +197,69 @@ body {
     font-size: 0.8rem;
     color: #666;
     font-style: italic;
+}
+
+/* ==========================================
+   ESTILOS PARA LAS SUBSECCIONES DE DETALLE
+   ========================================== */
+.project-detail-header {
+    padding: 8rem 2.5rem 2rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #111;
+}
+
+.project-detail-title {
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+}
+
+.project-detail-desc {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.project-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2.5rem 5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detail-image-container {
+    width: 100%;
+    height: 600px;
+    background-color: #eee;
+    border: 1px solid #eaeaea;
+    overflow: hidden;
+}
+
+.detail-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ==========================================
@@ -287,7 +360,11 @@ body {
         height: 260px; 
     }
 
-    .header, .about-section, .footer {
+    .detail-image-container {
+        height: 350px;
+    }
+
+    .header, .about-section, .footer, .project-detail-header, .project-gallery {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
