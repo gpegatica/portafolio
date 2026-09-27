@@ -8,14 +8,24 @@
 </head>
 <body>
 
-    <!-- Cabecera / Presentación -->
-    <header class="header">
+    <!-- Menú de Navegación Superior -->
+    <nav class="navbar">
+        <div class="nav-logo">Guadalupe Gatica</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección Home / Cabecera y Portafolio -->
+    <header id="home" class="header">
         <h1>Guadalupe Gatica</h1>
         <p class="subtitle">Diseñadora editorial y de portadas</p>
         <p class="bio">Apasionada por la tipografía, el libro impreso y la retícula. Creando universos visuales para el papel.</p>
     </header>
 
-    <!-- Sección de Proyectos (Portafolio) -->
+    <!-- Galería / Proyectos que se despliegan hacia abajo -->
     <main class="gallery">
         
         <!-- Proyecto 1 -->
@@ -32,12 +42,26 @@
             <p>Maquetación y dirección de arte.</p>
         </article>
 
+        <!-- Puedes duplicar estos bloques <article> para añadir más imágenes y proyectos -->
+        <article class="project-card">
+            <img src="images/proyecto3.jpg" alt="Portada de libro 3">
+            <h2>Título del Libro 3</h2>
+            <p>Encuadernación y concepto visual.</p>
+        </article>
+
     </main>
 
-    <!-- Pie de página con contacto -->
-    <footer class="footer">
-        <p>Contacto: <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a></p>
-        <p>© 2026 Guadalupe Gatica. Todos los derechos reservados.</p>
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="about-section">
+        <h2>Sobre mí</h2>
+        <p>Aquí puedes explayarte sobre tu trayectoria en el diseño editorial, tu paso por la Universidad Autónoma Metropolitana, tus especialidades en tipografía y tu amor por los libros impresos.</p>
+    </section>
+
+    <!-- Sección de Contacto (Pie de página) -->
+    <footer id="contacto" class="footer">
+        <h2>Contacto</h2>
+        <p>Escríbeme a: <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a></p>
+        <p class="copyright">© 2026 Guadalupe Gatica. Todos los derechos reservados.</p>
     </footer>
 
 </body>

@@ -1,4 +1,6 @@
-/* Reseteo básico y variables */
+html {
+    scroll-behavior: smooth;
+}/* Reseteo básico y variables */
 * {
     margin: 0;
     padding: 0;
