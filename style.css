@@ -1,88 +1,234 @@
+/* Configuración general y suavizado de scroll */
 html {
     scroll-behavior: smooth;
-}/* Reseteo básico y variables */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #1a1a1a;
-    background-color: #fcfcfc;
+    background-color: #f7f5f0; /* Tono arena / neutro cálido muy editorial */
+    color: #2b2b2b;
     line-height: 1.6;
-    padding: 40px 20px;
+}
+
+/* Barra de navegación superior fija y elegante */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(247, 245, 240, 0.95);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e3ded6;
+    z-index: 1000;
+}
+
+.nav-logo a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #1a1a1a;
+}
+
+/* Cabecera / Home con tipografía masiva, audaz y expandida */
+.header {
+    padding: 13rem 2rem 6rem 2rem;
+    text-align: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Cabecera estilo editorial */
-.header {
-    margin-bottom: 60px;
-    border-bottom: 1px solid #e0e0e0;
-    padding-bottom: 30px;
+.header .bold-title {
+    font-size: clamp(3.5rem, 8vw, 7rem); /* Título ultra masivo y responsivo */
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+    color: #111;
+    text-transform: uppercase;
 }
 
-.header h1 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    letter-spacing: -0.02em;
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 16px;
-}
-
-.bio {
-    max-width: 600px;
+.header .subtitle {
+    font-size: 1.3rem;
+    font-weight: 700;
     color: #444;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 2rem;
 }
 
-/* Galería en Retícula (Grid) */
+.header .bio {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* Galería de proyectos: Margen CERO con los bordes del navegador e imágenes gigantescas */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2px; /* Margen mínimo absoluto entre imágenes */
+    padding: 0; /* Cero padding lateral para tocar los límites de la pantalla */
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 4rem 0;
+}
+
+.project-card {
+    background: #ffffff;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 4/5; /* Formato vertical imponente para portadas */
+    background-color: #ebe5dc;
+    overflow: hidden;
 }
 
 .project-card img {
     width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.project-card img:hover {
-    transform: translateY(-4px);
+.project-card:hover img {
+    transform: scale(1.03);
 }
 
-.project-card h2 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 4px;
+/* Información del proyecto integrada de forma minimalista */
+.project-info {
+    padding: 1rem 1.5rem;
+    background: #ffffff;
 }
 
-.project-card p {
-    font-size: 0.95rem;
-    color: #666;
-}
-
-/* Pie de página */
-.footer {
-    border-top: 1px solid #e0e0e0;
-    padding-top: 20px;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-.footer a {
+.project-info h2 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin: 0 0 0.3rem 0;
     color: #1a1a1a;
+    text-transform: uppercase;
+}
+
+.project-info p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Sección Sobre Mí y Contacto con tipografías icónicas y extendidas */
+.about-section {
+    padding: 10rem 2rem;
+    background-color: #efede6;
+    border-top: 1px solid #e3ded6;
+    border-bottom: 1px solid #e3ded6;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 6vw, 5rem); /* Títulos atrevidos y monumentales */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin-bottom: 2rem;
+    color: #111;
+    line-height: 1;
+}
+
+.about-section p {
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* Footer / Contacto */
+.footer {
+    padding: 10rem 2rem;
+    text-align: center;
+    background-color: #f7f5f0;
+}
+
+.footer p {
+    color: #555;
+    margin: 0.8rem 0;
+    font-size: 1.2rem;
+}
+
+.email-link {
+    color: #111;
+    font-weight: 800;
+    font-size: 1.5rem;
     text-decoration: underline;
+    text-underline-offset: 8px;
+    letter-spacing: 0.05em;
+}
+
+.copyright {
+    font-size: 0.8rem !important;
+    color: #888;
+    margin-top: 5rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+}
+
+/* Responsivo para celulares */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .nav-links {
+        gap: 1.5rem;
+    }
+    .header {
+        padding: 10rem 1rem 4rem 1rem;
+    }
+    .gallery {
+        grid-template-columns: 1fr; /* Una sola columna masiva en móviles */
+    }
 }
