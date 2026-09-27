@@ -1,234 +1,283 @@
-/* Configuración general y suavizado de scroll */
+/* ==========================================
+   RESET & CONFIGURACIÓN GENERAL
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f7f5f0; /* Tono arena / neutro cálido muy editorial */
-    color: #2b2b2b;
+    background-color: #f8f8f6;
+    color: #1a1a1a;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
     line-height: 1.6;
 }
 
-/* Barra de navegación superior fija y elegante */
+/* ==========================================
+   NAVEGACIÓN SUPERIOR
+   ========================================== */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(247, 245, 240, 0.95);
-    backdrop-filter: blur(8px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
-    box-sizing: border-box;
-    border-bottom: 1px solid #e3ded6;
+    background-color: rgba(248, 248, 246, 0.95);
+    backdrop-filter: blur(5px);
     z-index: 1000;
+    border-bottom: 1px solid #e0e0dc;
 }
 
 .nav-logo a {
     text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
     color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-name {
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+.logo-sub {
+    font-family: 'Georgia', serif;
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 0.02em;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 3rem;
-    margin: 0;
-    padding: 0;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    gap: 2.5rem;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #666;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #1a1a1a;
+    color: #666;
 }
 
-/* Cabecera / Home con tipografía masiva, audaz y expandida */
+/* ==========================================
+   CABECERA / HOME (Título con gran tracking)
+   ========================================== */
 .header {
-    padding: 13rem 2rem 6rem 2rem;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 8rem 2rem 4rem 2rem;
+    border-bottom: 1px solid #e0e0dc;
 }
 
-.header .bold-title {
-    font-size: clamp(3.5rem, 8vw, 7rem); /* Título ultra masivo y responsivo */
-    font-weight: 900;
-    letter-spacing: -0.05em;
-    line-height: 0.95;
+.bold-title {
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: clamp(3rem, 7vw, 7rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.25em; /* Mayor espacio entre letras pedido */
     margin-bottom: 1.5rem;
+    line-height: 1.1;
     color: #111;
-    text-transform: uppercase;
 }
 
-.header .subtitle {
-    font-size: 1.3rem;
-    font-weight: 700;
+.subtitle {
+    font-size: 1.25rem;
+    font-style: italic;
     color: #444;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
 }
 
-.header .bio {
-    font-size: 1.2rem;
+.bio {
+    max-width: 600px;
+    font-size: 1.05rem;
     color: #555;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* Galería de proyectos: Margen CERO con los bordes del navegador e imágenes gigantescas */
+/* ==========================================
+   GALERÍA DINÁMICA ASIMÉTRICA (Grid Editorial)
+   ========================================== */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 2px; /* Margen mínimo absoluto entre imágenes */
-    padding: 0; /* Cero padding lateral para tocar los límites de la pantalla */
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0 0 4rem 0;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+    padding: 4rem 3rem;
+    background-color: #fff;
 }
 
 .project-card {
-    background: #ffffff;
-    border-radius: 0;
-    overflow: hidden;
-    position: relative;
     display: flex;
     flex-direction: column;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+/* Diferentes alturas dinámicas para las imágenes */
+.size-tall .image-container {
+    height: 520px;
+}
+
+.size-medium .image-container {
+    height: 380px;
+}
+
+.size-short .image-container {
+    height: 260px;
 }
 
 .image-container {
     width: 100%;
-    aspect-ratio: 4/5; /* Formato vertical imponente para portadas */
-    background-color: #ebe5dc;
     overflow: hidden;
+    background-color: #eee;
+    position: relative;
+    border: 1px solid #eaeaea;
 }
 
-.project-card img {
+.image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.project-card:hover img {
-    transform: scale(1.03);
+.project-card:hover .image-container img {
+    transform: scale(1.04);
 }
 
-/* Información del proyecto integrada de forma minimalista */
 .project-info {
-    padding: 1rem 1.5rem;
-    background: #ffffff;
+    padding: 1.2rem 0;
 }
 
 .project-info h2 {
-    font-size: 1.05rem;
-    font-weight: 800;
-    letter-spacing: 0.05em;
-    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.3rem;
     color: #1a1a1a;
-    text-transform: uppercase;
 }
 
 .project-info p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #666;
-    margin: 0;
+    font-style: italic;
 }
 
-/* Sección Sobre Mí y Contacto con tipografías icónicas y extendidas */
+/* ==========================================
+   SECCIÓN SOBRE MÍ
+   ========================================== */
 .about-section {
-    padding: 10rem 2rem;
-    background-color: #efede6;
-    border-top: 1px solid #e3ded6;
-    border-bottom: 1px solid #e3ded6;
-    text-align: center;
+    padding: 8rem 3rem;
+    background-color: #f8f8f6;
+    border-top: 1px solid #e0e0dc;
+    display: flex;
+    justify-content: center;
 }
 
 .about-content {
-    max-width: 850px;
-    margin: 0 auto;
+    max-width: 800px;
 }
 
 .section-title {
-    font-size: clamp(2.5rem, 6vw, 5rem); /* Títulos atrevidos y monumentales */
-    font-weight: 900;
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: 2rem;
     text-transform: uppercase;
-    letter-spacing: -0.04em;
+    letter-spacing: 0.1em;
     margin-bottom: 2rem;
-    color: #111;
-    line-height: 1;
+    font-weight: normal;
 }
 
-.about-section p {
-    font-size: 1.25rem;
-    color: #333;
+.about-content p {
+    font-size: 1.2rem;
     line-height: 1.8;
+    color: #333;
 }
 
-/* Footer / Contacto */
+/* ==========================================
+   FOOTER / CONTACTO
+   ========================================== */
 .footer {
-    padding: 10rem 2rem;
-    text-align: center;
-    background-color: #f7f5f0;
+    padding: 6rem 3rem 4rem 3rem;
+    background-color: #111;
+    color: #f8f8f6;
+}
+
+.footer .section-title {
+    color: #f8f8f6;
 }
 
 .footer p {
-    color: #555;
-    margin: 0.8rem 0;
-    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 0.5rem;
 }
 
 .email-link {
-    color: #111;
-    font-weight: 800;
-    font-size: 1.5rem;
+    color: #fff;
     text-decoration: underline;
-    text-underline-offset: 8px;
+    font-size: 1.2rem;
     letter-spacing: 0.05em;
+    transition: opacity 0.3s ease;
+}
+
+.email-link:hover {
+    opacity: 0.7;
 }
 
 .copyright {
-    font-size: 0.8rem !important;
-    color: #888;
-    margin-top: 5rem !important;
+    margin-top: 4rem;
+    font-size: 0.85rem;
+    color: #777;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-weight: 700;
 }
 
-/* Responsivo para celulares */
+/* ==========================================
+   DISEÑO RESPONSIVO (Móviles)
+   ========================================== */
 @media (max-width: 768px) {
     .navbar {
-        padding: 1rem 1.5rem;
-        flex-direction: column;
-        gap: 0.8rem;
+        padding: 1.2rem 1.5rem;
     }
+    
     .nav-links {
-        gap: 1.5rem;
+        display: none; /* Ocultar menú en pantallas muy pequeñas o simplificar */
     }
-    .header {
-        padding: 10rem 1rem 4rem 1rem;
-    }
+
     .gallery {
-        grid-template-columns: 1fr; /* Una sola columna masiva en móviles */
+        padding: 2rem 1.5rem;
+        gap: 2rem;
+    }
+
+    .size-tall .image-container,
+    .size-medium .image-container,
+    .size-short .image-container {
+        height: 320px; /* Altura unificada estándar en móvil para mejor lectura */
+    }
+
+    .header, .about-section, .footer {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
