@@ -29,7 +29,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 3rem;
+    padding: 1rem 2.5rem;
     background-color: rgba(248, 248, 246, 0.95);
     backdrop-filter: blur(5px);
     z-index: 1000;
@@ -45,29 +45,31 @@ body {
 
 .logo-name {
     font-family: 'Elephant', 'Georgia', serif;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: bold;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.18em; /* Mayor separación entre letras */
     text-transform: uppercase;
 }
 
 .logo-sub {
     font-family: 'Georgia', serif;
-    font-size: 0.75rem;
-    color: #666;
-    letter-spacing: 0.02em;
+    font-size: 0.85rem; /* Mismo tamaño y estilo que los subtítulos */
+    font-style: italic;
+    color: #444;
+    letter-spacing: 0.03em;
+    margin-top: 0.1rem;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
     text-decoration: none;
     color: #1a1a1a;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     transition: color 0.3s ease;
@@ -78,74 +80,75 @@ body {
 }
 
 /* ==========================================
-   CABECERA / HOME (Título con gran tracking)
+   CABECERA / HOME (Altura reducida)
    ========================================== */
 .header {
-    min-height: 90vh;
+    min-height: 55vh; /* Menos larga para mostrar imágenes de inicio */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 8rem 2rem 4rem 2rem;
+    padding: 7rem 2rem 2.5rem 2rem;
     border-bottom: 1px solid #e0e0dc;
 }
 
 .bold-title {
     font-family: 'Elephant', 'Georgia', serif;
-    font-size: clamp(3rem, 7vw, 7rem);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
     font-weight: normal;
     text-transform: uppercase;
-    letter-spacing: 0.25em; /* Mayor espacio entre letras pedido */
-    margin-bottom: 1.5rem;
+    letter-spacing: 0.22em; 
+    margin-bottom: 1rem;
     line-height: 1.1;
     color: #111;
 }
 
 .subtitle {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-style: italic;
     color: #444;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.05em;
 }
 
 .bio {
-    max-width: 600px;
-    font-size: 1.05rem;
+    max-width: 550px;
+    font-size: 0.95rem;
     color: #555;
-    line-height: 1.8;
+    line-height: 1.6;
 }
 
 /* ==========================================
-   GALERÍA DINÁMICA ASIMÉTRICA (Grid Editorial)
+   GALERÍA COMPACTA (Estilo Masonry dinámico sin huecos)
    ========================================== */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 3rem;
-    padding: 4rem 3rem;
+    column-count: 3; /* Distribución en columnas para minimizar espacios vacíos */
+    column-gap: 1.5rem;
+    padding: 2.5rem 2.5rem;
     background-color: #fff;
 }
 
 .project-card {
-    display: flex;
-    flex-direction: column;
+    break-inside: avoid; /* Evita que las tarjetas se corten entre columnas */
+    margin-bottom: 1.5rem; /* Espacio mínimo vertical controlado */
+    display: inline-block;
+    width: 100%;
     background: #fff;
     transition: transform 0.3s ease;
 }
 
-/* Diferentes alturas dinámicas para las imágenes */
+/* Diferentes alturas dinámicas para los bloques de imagen */
 .size-tall .image-container {
-    height: 520px;
+    height: 420px;
 }
 
 .size-medium .image-container {
-    height: 380px;
+    height: 310px;
 }
 
 .size-short .image-container {
-    height: 260px;
+    height: 210px;
 }
 
 .image-container {
@@ -164,23 +167,23 @@ body {
 }
 
 .project-card:hover .image-container img {
-    transform: scale(1.04);
+    transform: scale(1.03);
 }
 
 .project-info {
-    padding: 1.2rem 0;
+    padding: 0.8rem 0 0.4rem 0;
 }
 
 .project-info h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: normal;
-    letter-spacing: 0.03em;
-    margin-bottom: 0.3rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.2rem;
     color: #1a1a1a;
 }
 
 .project-info p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #666;
     font-style: italic;
 }
@@ -189,7 +192,7 @@ body {
    SECCIÓN SOBRE MÍ
    ========================================== */
 .about-section {
-    padding: 8rem 3rem;
+    padding: 5rem 2.5rem;
     background-color: #f8f8f6;
     border-top: 1px solid #e0e0dc;
     display: flex;
@@ -202,16 +205,16 @@ body {
 
 .section-title {
     font-family: 'Elephant', 'Georgia', serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     font-weight: normal;
 }
 
 .about-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: #333;
 }
 
@@ -219,7 +222,7 @@ body {
    FOOTER / CONTACTO
    ========================================== */
 .footer {
-    padding: 6rem 3rem 4rem 3rem;
+    padding: 5rem 2.5rem 3rem 2.5rem;
     background-color: #111;
     color: #f8f8f6;
 }
@@ -230,13 +233,13 @@ body {
 
 .footer p {
     color: #ccc;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .email-link {
     color: #fff;
     text-decoration: underline;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     letter-spacing: 0.05em;
     transition: opacity 0.3s ease;
 }
@@ -246,34 +249,41 @@ body {
 }
 
 .copyright {
-    margin-top: 4rem;
-    font-size: 0.85rem;
+    margin-top: 3rem;
+    font-size: 0.8rem;
     color: #777;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
 /* ==========================================
-   DISEÑO RESPONSIVO (Móviles)
+   DISEÑO RESPONSIVO (Móviles y Tablets)
    ========================================== */
+@media (max-width: 1024px) {
+    .gallery {
+        column-count: 2; /* 2 columnas en tablets */
+    }
+}
+
 @media (max-width: 768px) {
     .navbar {
-        padding: 1.2rem 1.5rem;
+        padding: 1rem 1.5rem;
     }
     
     .nav-links {
-        display: none; /* Ocultar menú en pantallas muy pequeñas o simplificar */
+        display: none; 
     }
 
     .gallery {
-        padding: 2rem 1.5rem;
-        gap: 2rem;
+        column-count: 1; /* 1 columna en móviles para una lectura lineal limpia */
+        padding: 1.5rem;
+        column-gap: 0;
     }
 
     .size-tall .image-container,
     .size-medium .image-container,
     .size-short .image-container {
-        height: 320px; /* Altura unificada estándar en móvil para mejor lectura */
+        height: 280px; 
     }
 
     .header, .about-section, .footer {
