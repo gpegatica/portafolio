@@ -201,17 +201,5 @@
         </div>
     </footer>
 
-/* Estilo complementario para etiquetas de proyecto */
-.project-tag {
-    display: inline-block;
-    font-size: 0.68rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: #d9534f;
-    font-family: sans-serif;
-    font-weight: 600;
-    margin-bottom: 0.2rem;
-}
-
 </body>
 </html>
