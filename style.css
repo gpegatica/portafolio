@@ -12,8 +12,8 @@ html {
 }
 
 body {
-    background-color: #f8f8f6;
-    color: #1a1a1a;
+    background-color: #f7f4ed; /* Fondo marfil cálido */
+    color: #0b2545; /* Azul petróleo profundo y sofisticado */
     font-family: 'Georgia', 'Times New Roman', Times, serif;
     line-height: 1.6;
 }
@@ -30,15 +30,15 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2.5rem;
-    background-color: rgba(248, 248, 246, 0.95);
+    background-color: rgba(247, 244, 237, 0.95);
     backdrop-filter: blur(5px);
     z-index: 1000;
-    border-bottom: 1px solid #e0e0dc;
+    border-bottom: 1px solid #d4cbb8;
 }
 
 .nav-logo a {
     text-decoration: none;
-    color: #1a1a1a;
+    color: #0b2545;
     display: flex;
     flex-direction: column;
 }
@@ -47,17 +47,17 @@ body {
     font-family: 'Elephant', 'Georgia', serif;
     font-size: 0.75rem;
     font-weight: bold;
-    letter-spacing: 0.28em; /* Mayor separación entre letras solicitada */
+    letter-spacing: 0.28em;
     text-transform: uppercase;
 }
 
 .logo-sub {
     font-family: 'Georgia', serif;
     font-size: 0.8rem;
-    font-style: italic; /* En itálicas */
-    color: #444;
+    font-style: italic;
+    color: #d9534f; /* Toque coral/terracota creativo en el subtítulo */
     letter-spacing: 0.03em;
-    white-space: nowrap; /* Forzar que "diseño editorial" quede en una sola línea */
+    white-space: nowrap;
     margin-top: 0.1rem;
 }
 
@@ -69,7 +69,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: #1a1a1a;
+    color: #0b2545;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -77,7 +77,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #666;
+    color: #d9534f; /* Color llamativo al hacer hover */
 }
 
 /* ==========================================
@@ -91,7 +91,7 @@ body {
     align-items: center;
     text-align: center;
     padding: 7rem 2rem 2rem 2rem;
-    border-bottom: 1px solid #e0e0dc;
+    border-bottom: 1px solid #d4cbb8;
 }
 
 .bold-title {
@@ -102,13 +102,13 @@ body {
     letter-spacing: 0.22em;
     margin-bottom: 1rem;
     line-height: 1.1;
-    color: #111;
+    color: #0b2545;
 }
 
 .subtitle {
     font-size: 1.15rem;
     font-style: italic;
-    color: #444;
+    color: #d9534f; /* Acento creativo */
     margin-bottom: 1rem;
     letter-spacing: 0.05em;
 }
@@ -116,7 +116,7 @@ body {
 .bio {
     max-width: 550px;
     font-size: 0.95rem;
-    color: #555;
+    color: #334e68; /* Tono gris-azulado suave para lectura */
     line-height: 1.6;
 }
 
@@ -127,7 +127,7 @@ body {
     column-count: 3;
     column-gap: 1.2rem;
     padding: 2rem 2.5rem;
-    background-color: #fff;
+    background-color: #ffffff;
 }
 
 .project-card {
@@ -135,7 +135,7 @@ body {
     margin-bottom: 1.2rem;
     display: inline-block;
     width: 100%;
-    background: #fff;
+    background: #ffffff;
 }
 
 .project-link {
@@ -146,7 +146,7 @@ body {
 }
 
 .project-link:hover {
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 /* Alturas dinámicas compactas */
@@ -165,9 +165,9 @@ body {
 .image-container {
     width: 100%;
     overflow: hidden;
-    background-color: #eee;
+    background-color: #f0ebe1;
     position: relative;
-    border: 1px solid #eaeaea;
+    border: 1px solid #e2dac9;
 }
 
 .image-container img {
@@ -190,12 +190,17 @@ body {
     font-weight: normal;
     letter-spacing: 0.02em;
     margin-bottom: 0.1rem;
-    color: #1a1a1a;
+    color: #0b2545;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-info h2 {
+    color: #d9534f; /* Destaca el título del proyecto en coral al pasar el cursor */
 }
 
 .project-info p {
     font-size: 0.8rem;
-    color: #666;
+    color: #627d98;
     font-style: italic;
 }
 
@@ -211,7 +216,7 @@ body {
 .back-link {
     display: inline-block;
     text-decoration: none;
-    color: #555;
+    color: #627d98;
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
@@ -220,7 +225,7 @@ body {
 }
 
 .back-link:hover {
-    color: #111;
+    color: #d9534f;
 }
 
 .project-detail-title {
@@ -230,11 +235,12 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     margin-bottom: 1rem;
+    color: #0b2545;
 }
 
 .project-detail-desc {
     font-size: 1.1rem;
-    color: #555;
+    color: #334e68;
     line-height: 1.7;
     font-style: italic;
 }
@@ -251,8 +257,8 @@ body {
 .detail-image-container {
     width: 100%;
     height: 600px;
-    background-color: #eee;
-    border: 1px solid #eaeaea;
+    background-color: #f0ebe1;
+    border: 1px solid #e2dac9;
     overflow: hidden;
 }
 
@@ -267,8 +273,8 @@ body {
    ========================================== */
 .about-section {
     padding: 5rem 2.5rem;
-    background-color: #f8f8f6;
-    border-top: 1px solid #e0e0dc;
+    background-color: #f7f4ed;
+    border-top: 1px solid #d4cbb8;
     display: flex;
     justify-content: center;
 }
@@ -284,12 +290,13 @@ body {
     letter-spacing: 0.1em;
     margin-bottom: 1.5rem;
     font-weight: normal;
+    color: #0b2545;
 }
 
 .about-content p {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #333;
+    color: #334e68;
 }
 
 /* ==========================================
@@ -297,21 +304,21 @@ body {
    ========================================== */
 .footer {
     padding: 5rem 2.5rem 3rem 2.5rem;
-    background-color: #111;
-    color: #f8f8f6;
+    background-color: #0b2545; /* Footer profundo con el color principal en oscuro */
+    color: #f7f4ed;
 }
 
 .footer .section-title {
-    color: #f8f8f6;
+    color: #f7f4ed;
 }
 
 .footer p {
-    color: #ccc;
+    color: #bcccdc;
     margin-bottom: 0.4rem;
 }
 
 .email-link {
-    color: #fff;
+    color: #ff6b6b; /* Un tono coral brillante perfecto para llamadas a la acción */
     text-decoration: underline;
     font-size: 1.1rem;
     letter-spacing: 0.05em;
@@ -319,13 +326,13 @@ body {
 }
 
 .email-link:hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 .copyright {
     margin-top: 3rem;
     font-size: 0.8rem;
-    color: #777;
+    color: #829ab1;
     letter-spacing: 0.05em;
     text-transform: uppercase;
 }
