@@ -1,205 +1,378 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guadalupe Gatica — Diseño Editorial & Ilustración</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ==========================================
+   RESET & CONFIGURACIÓN GENERAL
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <!-- Menú de Navegación Superior -->
-    <nav class="navbar">
-        <div class="nav-logo">
-            <a href="index.html">
-                <span class="logo-name">Guadalupe Gatica</span>
-                <span class="logo-sub">Diseño editorial & Ilustración</span>
-            </a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+html {
+    scroll-behavior: smooth;
+}
 
-    <!-- Cabecera / Home (Dinámica y Editorial) -->
-    <header id="home" class="header">
-        <h1 class="bold-title">Guadalupe<br>Gatica</h1>
-        <p class="subtitle">Diseño Editorial <span>&</span> Ilustración</p>
-        <p class="bio">
-            Explorando la intersección entre la <em>rigurosidad de la retícula</em>, la <em>materia impresa</em> y la <em>expresividad de la ilustración</em>. Creando objetos de lectura visualmente únicos.
-        </p>
-    </header>
+body {
+    background-color: #f7f4ed; /* Fondo marfil cálido */
+    color: #0b2545; /* Azul petróleo profundo y sofisticado */
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    line-height: 1.6;
+}
 
-    <!-- Galería de Proyectos (Compacta y Categorizada) -->
-    <main id="proyectos" class="gallery">
-        
-        <!-- Proyecto 1 -->
-        <article class="project-card size-tall">
-            <a href="proyecto1.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto1.jpg" alt="Proyecto editorial 1" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Portada & Ilustración</span>
-                    <h2>Título del Proyecto 1</h2>
-                    <p>Concepto visual y diseño de cubierta.</p>
-                </div>
-            </a>
-        </article>
+/* ==========================================
+   NAVEGACIÓN SUPERIOR
+   ========================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: rgba(247, 244, 237, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    border-bottom: 1px solid #d4cbb8;
+}
 
-        <!-- Proyecto 2 -->
-        <article class="project-card size-short">
-            <a href="proyecto2.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto2.jpg" alt="Proyecto editorial 2" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Maquetación</span>
-                    <h2>Título del Proyecto 2</h2>
-                    <p>Diseño interior y sistema tipográfico.</p>
-                </div>
-            </a>
-        </article>
+.nav-logo a {
+    text-decoration: none;
+    color: #0b2545;
+    display: flex;
+    flex-direction: column;
+}
 
-        <!-- Proyecto 3 -->
-        <article class="project-card size-medium">
-            <a href="proyecto3.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto3.jpg" alt="Proyecto editorial 3" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Libro de Arte</span>
-                    <h2>Título del Proyecto 3</h2>
-                    <p>Encuadernación rústica y dirección de arte.</p>
-                </div>
-            </a>
-        </article>
+.logo-name {
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+}
 
-        <!-- Proyecto 4 -->
-        <article class="project-card size-tall">
-            <a href="proyecto4.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto4.jpg" alt="Proyecto editorial 4" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Colección Editorial</span>
-                    <h2>Título del Proyecto 4</h2>
-                    <p>Sistema de rejilla y tipografía custom.</p>
-                </div>
-            </a>
-        </article>
+.logo-sub {
+    font-family: 'Georgia', serif;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #d9534f; /* Toque coral/terracota creativo en el subtítulo */
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    margin-top: 0.1rem;
+}
 
-        <!-- Proyecto 5 -->
-        <article class="project-card size-short">
-            <a href="proyecto5.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto5.jpg" alt="Proyecto editorial 5" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Ilustración & Ensayo</span>
-                    <h2>Título del Proyecto 5</h2>
-                    <p>Catálogo de arte contemporáneo.</p>
-                </div>
-            </a>
-        </article>
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
 
-        <!-- Proyecto 6 -->
-        <article class="project-card size-medium">
-            <a href="proyecto6.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto6.jpg" alt="Proyecto editorial 6" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Diseño de Portada</span>
-                    <h2>Título del Proyecto 6</h2>
-                    <p>Diseño de colección literaria.</p>
-                </div>
-            </a>
-        </article>
+.nav-links a {
+    text-decoration: none;
+    color: #0b2545;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+}
 
-        <!-- Proyecto 7 -->
-        <article class="project-card size-tall">
-            <a href="proyecto7.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto7.jpg" alt="Proyecto editorial 7" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Publicación Fanzine</span>
-                    <h2>Título del Proyecto 7</h2>
-                    <p>Ensayo visual y maquetación experimental.</p>
-                </div>
-            </a>
-        </article>
+.nav-links a:hover {
+    color: #d9534f; /* Color llamativo al hacer hover */
+}
 
-        <!-- Proyecto 8 -->
-        <article class="project-card size-short">
-            <a href="proyecto8.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto8.jpg" alt="Proyecto editorial 8" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Edición Independiente</span>
-                    <h2>Título del Proyecto 8</h2>
-                    <p>Publicación independiente y acabados en prensa.</p>
-                </div>
-            </a>
-        </article>
+/* ==========================================
+   CABECERA / HOME (Compacta)
+   ========================================== */
+.header {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 7rem 2rem 2rem 2rem;
+    border-bottom: 1px solid #d4cbb8;
+}
 
-        <!-- Proyecto 9 -->
-        <article class="project-card size-medium">
-            <a href="proyecto9.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto9.jpg" alt="Proyecto editorial 9" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Tipografía & Arte</span>
-                    <h2>Título del Proyecto 9</h2>
-                    <p>Formación de textos y capitulares ilustradas.</p>
-                </div>
-            </a>
-        </article>
+.bold-title {
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    color: #0b2545;
+}
 
-        <!-- Proyecto 10 -->
-        <article class="project-card size-tall">
-            <a href="proyecto10.html" class="project-link">
-                <div class="image-container">
-                    <img src="images/proyecto10.jpg" alt="Proyecto editorial 10" loading="lazy">
-                </div>
-                <div class="project-info">
-                    <span class="project-tag">Cubierta Minimalista</span>
-                    <h2>Título del Proyecto 10</h2>
-                    <p>Diseño de portada con enfoque en espacio negativo.</p>
-                </div>
-            </a>
-        </article>
+.subtitle {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: #d9534f; /* Acento creativo */
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+}
 
-    </main>
+.bio {
+    max-width: 550px;
+    font-size: 0.95rem;
+    color: #334e68; /* Tono gris-azulado suave para lectura */
+    line-height: 1.6;
+}
 
-    <!-- Sección Sobre Mí -->
-    <section id="sobre-mi" class="about-section">
-        <div class="about-content">
-            <h2 class="section-title">Sobre mí</h2>
-            <p>
-                Diseñadora editorial e ilustradora especializada en el <strong>diseño de portadas, maquetación y especificaciones técnicas</strong> para la industria del libro y publicaciones independientes.
-            </p>
-            <br>
-            <p>
-                Mi trabajo explora la relación directa entre la <em>materialidad del objeto impreso</em>, la estructura formal de la retícula y el lenguaje de la ilustración. Domino el proceso completo de producción: desde la conceptualización y maquetación, pasando por la creación de ePubs, hasta la supervisión directa en imprenta.
-            </p>
-        </div>
-    </section>
+/* ==========================================
+   GALERÍA COMPACTA (10 proyectos)
+   ========================================== */
+.gallery {
+    column-count: 3;
+    column-gap: 1.2rem;
+    padding: 2rem 2.5rem;
+    background-color: #ffffff;
+}
 
-    <!-- Sección Contacto / Footer -->
-    <footer id="contacto" class="footer">
-        <div class="footer-content">
-            <h2 class="section-title">¿Trabajamos juntos?</h2>
-            <p>Disponible para comisiones de cubiertas, maquetación de libros o proyectos ilustrados:</p>
-            <p><a href="mailto:gpegatica@gmail.com" class="email-link">gpegatica@gmail.com</a></p>
-            <p class="copyright">© 2026 Guadalupe Gatica — Todos los derechos reservados.</p>
-        </div>
-    </footer>
+.project-card {
+    break-inside: avoid;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    width: 100%;
+    background: #ffffff;
+}
 
-</body>
-</html>
+.project-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: opacity 0.3s ease;
+}
+
+.project-link:hover {
+    opacity: 0.95;
+}
+
+/* Alturas dinámicas compactas */
+.size-tall .image-container {
+    height: 380px;
+}
+
+.size-medium .image-container {
+    height: 280px;
+}
+
+.size-short .image-container {
+    height: 200px;
+}
+
+.image-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f0ebe1;
+    position: relative;
+    border: 1px solid #e2dac9;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .image-container img {
+    transform: scale(1.03);
+}
+
+.project-info {
+    padding: 0.6rem 0 0.2rem 0;
+}
+
+.project-info h2 {
+    font-size: 0.95rem;
+    font-weight: normal;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.1rem;
+    color: #0b2545;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-info h2 {
+    color: #d9534f; /* Destaca el título del proyecto en coral al pasar el cursor */
+}
+
+.project-info p {
+    font-size: 0.8rem;
+    color: #627d98;
+    font-style: italic;
+}
+
+/* ==========================================
+   ESTILOS PARA LAS SUBSECCIONES DE DETALLE
+   ========================================== */
+.project-detail-header {
+    padding: 8rem 2.5rem 2rem 2.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #627d98;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: #d9534f;
+}
+
+.project-detail-title {
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    color: #0b2545;
+}
+
+.project-detail-desc {
+    font-size: 1.1rem;
+    color: #334e68;
+    line-height: 1.7;
+    font-style: italic;
+}
+
+.project-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2.5rem 5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.detail-image-container {
+    width: 100%;
+    height: 600px;
+    background-color: #f0ebe1;
+    border: 1px solid #e2dac9;
+    overflow: hidden;
+}
+
+.detail-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================
+   SECCIÓN SOBRE MÍ
+   ========================================== */
+.about-section {
+    padding: 5rem 2.5rem;
+    background-color: #f7f4ed;
+    border-top: 1px solid #d4cbb8;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content {
+    max-width: 800px;
+}
+
+.section-title {
+    font-family: 'Elephant', 'Georgia', serif;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    font-weight: normal;
+    color: #0b2545;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #334e68;
+}
+
+/* ==========================================
+   FOOTER / CONTACTO
+   ========================================== */
+.footer {
+    padding: 5rem 2.5rem 3rem 2.5rem;
+    background-color: #0b2545; /* Footer profundo con el color principal en oscuro */
+    color: #f7f4ed;
+}
+
+.footer .section-title {
+    color: #f7f4ed;
+}
+
+.footer p {
+    color: #bcccdc;
+    margin-bottom: 0.4rem;
+}
+
+.email-link {
+    color: #ff6b6b; /* Un tono coral brillante perfecto para llamadas a la acción */
+    text-decoration: underline;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s ease;
+}
+
+.email-link:hover {
+    opacity: 0.8;
+}
+
+.copyright {
+    margin-top: 3rem;
+    font-size: 0.8rem;
+    color: #829ab1;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO (Móviles y Tablets)
+   ========================================== */
+@media (max-width: 1024px) {
+    .gallery {
+        column-count: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 1.5rem;
+    }
+    
+    .nav-links {
+        display: none; 
+    }
+
+    .gallery {
+        column-count: 1;
+        padding: 1.5rem;
+        column-gap: 0;
+    }
+
+    .size-tall .image-container,
+    .size-medium .image-container,
+    .size-short .image-container {
+        height: 260px; 
+    }
+
+    .detail-image-container {
+        height: 350px;
+    }
+
+    .header, .about-section, .footer, .project-detail-header, .project-gallery {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
